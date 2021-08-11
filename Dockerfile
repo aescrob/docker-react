@@ -12,4 +12,7 @@ CMD ["npm", "run", "build" ]
 
 FROM nginx
 
+#Only relevant if deployed to AWS Elastic beanstalk
+EXPOSE 80
+
 COPY --from=builder /app/build /usr/share/nginx/html
